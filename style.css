@@ -1,0 +1,356 @@
+*{
+    margin:  0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #fff76a;
+    font-family: 'Roboto', sans-serif;
+    position: -webkit-sticky;
+    /* top: 0px; */
+    /* left: 0; */
+    /* box-sizing: border-box; */
+}
+
+.logo img{
+    width: 50px;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #fff76a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding: 0;
+        justify-content: center;
+    }
+    .nav-links li{
+        opacity: 0;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .burger{
+        display: block;
+    }
+    .searchbar .icon{
+        margin-right: -20px;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+.searchbar{
+    position: relative;
+}
+
+.searchbar input[type="text"]{
+    border: 0;
+    padding: 0 0px;
+    width: 0px;
+    height: 35px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.searchbar .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    width: 35px;
+    height: 100%;
+    border-radius: 3px;
+    color: black;
+}
+
+.searchbar .icon svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.searchbar .icon.active{
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.searchbar input[type="text"].active{
+    width: 250px;
+    padding: 0 10px;
+    transition: all 0.5s 0.2s ease;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.owl-carousel {
+    width: 100%;
+    height: 50vh;
+}
+
+.slide {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+}
+
+.slide-1 {
+    background-image: url(./assets/home-1.png);
+}
+
+.slide-2 {
+    background-image: url(./assets/home-2.png);
+}
+
+.slide-3 {
+    background-image: url(./assets/stock-footage-brunette-woman-swimming-underwater-in-slow-motion.mp4);
+}
+
+.slide-4 {
+    background-image: url(./assets/stock-footage-two-asian-boys-racing-with-their-father-in-a-pool.mp4);
+}
+
+.slide-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 0 20%;
+}
+
+.slide-content h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+.owl-dots {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10%;
+}
+
+.owl-dots span {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.owl-dots button {
+    border: yellow !important;
+    outline: yellow !important;
+    color: yellow;
+}
+
+
+.hero {
+    width: 50%;
+    height: 5px;
+    position: relative;
+    margin: 5px auto;
+}
+
+.btn-box {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.btn-box button{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-box button:hover{
+    background-color: #07689f;
+    border-radius: 6px;
+}
+.btn-box button:hover .active{
+    background-color: #07689f;
+    border-radius: 6px;
+}
+
+.content-left img{
+    width: 200px;
+}
+
+.content-center img{
+    width: 200px;
+}
+
+.content-right img{
+    width: 200px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 5% auto;
+}
+
+.content-left{
+    flex-basis: 50%;
+    text-align: left;
+    margin-right: 30px;
+}
+.content-center{
+    flex-basis: 50%;
+    text-align: left;
+    margin-right: 30px;
+}
+.content-right{
+    flex-basis: 50%;
+    text-align: left;
+    margin-right: 30px;
+}
+
+.content-left h5{
+    padding-top: 10px;
+}
+
+.content-center h5{
+    padding-top: 10px;
+}
+
+.content-right h5{
+    padding-top: 10px;
+}
+
+.content-left p{
+    padding-top: 10px;
+}
+
+.content-center p{
+    padding-top: 10px;
+}
+
+.content-right p{
+    padding-top: 10px;
+}
+
+#btn1.active{
+    color:black;
+}
+
+
+.wrap {
+    margin: 100px;
+    overflow: hidden;
+    width: 600px;
+    margin: auto;
+    padding-top: 450px;
+}
+
+.wrap .box {
+    padding: 50px;
+    background: white;
+    float: left;
+    margin: 10px;
+    color: black;
+}
+
+.wrap .box-hidden {
+    display: none;
+}
+
+.wrap-button {
+    width: 120px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.wrap-button .btn-load {
+    color: #07689f;
+}
